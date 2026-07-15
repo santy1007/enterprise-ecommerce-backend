@@ -95,7 +95,18 @@ const login = async (req, res) => {
 
 };
 
+const profile = async (req, res) => {
+
+    return successResponse(
+        res,
+        "Profile Fetched Successfully",
+        req.user
+    );
+
+};
+
 module.exports = {
     register,
-    login
+    login,
+    profile,
 };
