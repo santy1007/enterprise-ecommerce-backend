@@ -31,5 +31,8 @@ app.get("/", (req, res) => {
         message: "Enterprise E-Commerce Backend Running"
     });
 });
+const errorMiddleware =
+    require("./middleware/error.middleware");
+app.use(errorMiddleware);
 
 module.exports = app;
