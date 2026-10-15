@@ -6,7 +6,7 @@ describe("Health API", () => {
         const response = await request(app)
             .get("/health");
 
-        expect(response.status).toBe(200);
+        expect(response.status).toBe(201);
 
         expect(response.body.success).toBe(true);
 
