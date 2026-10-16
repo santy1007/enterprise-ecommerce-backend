@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    name: Run Node.js Tests
+    name: Test and Build Docker Image
     runs-on: ubuntu-latest
 
     steps:
@@ -26,3 +26,6 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Build Docker image
+        run: docker build -t ecommerce-backend:ci -f dockerfile .

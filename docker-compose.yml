@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: dockerfile
+
+    container_name: ecommerce-backend
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      MONGO_URI: mongodb://mongodb:27017/ecommerce
+      NODE_ENV: development
+
+    networks:
+      - ecommerce-network
+
+networks:
+  ecommerce-network:
+    external: true
