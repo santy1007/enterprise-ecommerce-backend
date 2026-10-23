@@ -1,13 +1,17 @@
 #!/bin/bash
 set -e
 
+COMPOSE_PROJECT="e-commerce-backend"
+COMPOSE_FILE="$GITHUB_WORKSPACE/docker-compose.yml"
+
 echo "Starting E-commerce backend deployment..."
 
 echo "Pulling the latest Docker image..."
-docker compose pull app
+docker compose -p "$COMPOSE_PROJECT" -f "$COMPOSE_FILE" pull app
 
-echo "Recreating the backend container with the latest image..."
-docker compose up -d --no-deps --force-recreate app
+echo "Recreating the backend container..."
+docker compose -p "$COMPOSE_PROJECT" -f "$COMPOSE_FILE" up \
+  -d --no-deps --force-recreate app
 
 echo "Waiting for the application to start..."
 sleep 5

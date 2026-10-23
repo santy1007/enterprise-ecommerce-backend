@@ -1,3 +1,4 @@
+name: e-commerce-backend
 services:
   app:
     image: santu1007/ecommerce-backend:latest
