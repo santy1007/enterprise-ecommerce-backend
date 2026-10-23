@@ -43,5 +43,7 @@ jobs:
           file: ./dockerfile
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name == 'push' }}
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce-backend:${{ github.sha }}
+          tags: |
+           ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce-backend:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce-backend:${{ github.sha }}
           

@@ -1,8 +1,6 @@
 services:
   app:
-    build:
-      context: .
-      dockerfile: dockerfile
+    image: santu1007/ecommerce-backend:latest
 
     container_name: ecommerce-backend
 
